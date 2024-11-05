@@ -313,7 +313,7 @@ async def main(seed_phrase, wallet_address):
 
 if __name__ == "__main__":
     with open('seed.txt', 'r') as seed_file, open('wallets.txt', 'r') as wallet_file:
-        seeds = [line.strip() for line in seed_file.readlines()]
+        seeds = [line.split() for line in seed_file.readlines()]
         addresses = [line.strip() for line in wallet_file.readlines()]
 
     if len(seeds) != len(addresses):
